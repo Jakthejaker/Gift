@@ -1,0 +1,105 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f8f1f5;
+    color: #4a4a4a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    padding: 2rem;
+    box-sizing: border-box;
+    margin-top: 2rem;
+}
+
+.section {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.apology-section {
+    padding-top: 3.5rem;
+}
+
+.apology-title, .message-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d84343;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.gifts-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.gift-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.gift-emoji {
+    font-size: 2rem;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.large-emoji {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+}
+
+.gift-text {
+    font-style: italic;
+    font-size: 1rem;
+    color: #888;
+}
+
+.message-section p {
+    font-size: 1.1rem;
+}
+
+strong {
+    color: #d84343;
+    font-weight: 700;
+}
+
+/* Add a subtle animation to the emojis for a "live" feel */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    .apology-title, .message-title {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+}
