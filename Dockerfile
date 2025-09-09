@@ -1,11 +1,18 @@
-# Use a lightweight Nginx image to serve the static files
-FROM nginx:alpine
+# Use a Python base image
+FROM python:3.9-slim
 
-# Copy all the static files from the current directory into Nginx's web root directory
-COPY . /usr/share/nginx/html
+# Set the working directory in the container
+WORKDIR /app
 
-# Expose port 80, which is the default for Nginx
-EXPOSE 80
+# Copy the requirements file and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# The default command runs Nginx in the foreground
-CMD ["nginx", "-g", "daemon off;"]
+# Copy all the project files into the container
+COPY . .
+
+# Expose the port the app will run on
+EXPOSE 5000
+
+# The command to run the Python application
+CMD ["python", "server.py"]
